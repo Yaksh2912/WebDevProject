@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Table Reservation</title>
+    <link rel="stylesheet" href="/styles/reservation.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Table</h1>
+        <div class="seat-map">
+            <div class="seat-container"> 
+                <button class="seat" data-seat="1" data-capacity="4">Table 1</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="2" data-capacity="2">Table 2</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="3" data-capacity="6">Table 3</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="4" data-capacity="4">Table 4</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="5" data-capacity="2">Table 5</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="6" data-capacity="4">Table 6</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="7" data-capacity="2">Table 7</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="8" data-capacity="6">Table 8</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="9" data-capacity="4">Table 9</button>
+            </div>
+            <div class="seat-container">
+                <button class="seat" data-seat="10" data-capacity="2">Table 10</button>
+            </div>
+        </div>
+
+        <div class="reservation-details">
+            <h2>Selected Table Details</h2>
+            <div class="detail-box" id="selected-seats">None</div>
+            <div class="detail-box" id="table-capacity"></div>
+        </div>
+
+        <!-- <button class="btn-confirm" id="confirm-selection" disabled>Go to Reservation Portal</button> -->
+        <a href="/portal" class="btn-confirm" id="confirm-selection"> Reserve </a>
+    </div>
+
+    <script src="reservation.js"></script>
+</body>
+</html>

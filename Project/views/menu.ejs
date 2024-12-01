@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="/styles/menu.css" />
+    <script>
+      function addToCart(item) {
+        fetch("/cart/add", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ item }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              alert(`Added ${item} to your cart!`);
+            } else {
+              alert("Failed to add item to the cart. Please try again.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("An error occurred while adding the item to the cart.");
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>What we offer</h1>
+        <a href="/cart" class="cart-button">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-text">Cart</span>
+        </a>
+      </header>
+      <section class="menu-grid">
+        <% const menu = [
+          { 
+            category: "Appetizers", 
+            items: [
+              { name: "Bruschetta", desc: "Toasted bread topped with fresh tomatoes, garlic, and basil." },
+              { name: "Caprese Salad", desc: "Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze." },
+              { name: "Garlic Knots", desc: "Soft, buttery knots of bread infused with garlic and herbs." },
+              { name: "Stuffed Mushrooms", desc: "Mushroom caps filled with a savory blend of cheese and herbs." }
+            ] 
+          },
+          { 
+            category: "Breads", 
+            items: [
+              { name: "Focaccia", desc: "Italian flatbread topped with olive oil, rosemary, and sea salt." },
+              { name: "Ciabatta", desc: "Rustic Italian white bread with a crisp crust and soft interior." },
+              { name: "Garlic Bread", desc: "Crusty bread slathered with garlic butter and toasted to perfection." },
+              { name: "Breadsticks", desc: "Crispy, golden breadsticks seasoned with Italian herbs." }
+            ] 
+          },
+          { 
+            category: "Beverages", 
+            items: [
+              { name: "Italian Soda", desc: "Sparkling water mixed with your choice of flavored syrup." },
+              { name: "Espresso", desc: "Rich, full-bodied shot of Italian coffee." },
+              { name: "Cappuccino", desc: "Espresso topped with steamed milk and a layer of foam." },
+              { name: "House Wine", desc: "Selection of red or white Italian wines." }
+            ] 
+          },
+          { 
+            category: "Chef's Special", 
+            items: [
+              { name: "Osso Buco", desc: "Braised veal shanks in a rich, aromatic sauce." },
+              { name: "Risotto al Tartufo", desc: "Creamy risotto infused with black truffle." },
+              { name: "Seafood Linguine", desc: "Linguine pasta with a medley of fresh seafood in a light sauce." },
+              { name: "Bistecca Fiorentina", desc: "Grilled T-bone steak seasoned with herbs and olive oil." }
+            ] 
+          },
+          { 
+            category: "Dessert", 
+            items: [
+              { name: "Tiramisu", desc: "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream." },
+              { name: "Panna Cotta", desc: "Silky smooth Italian cream dessert topped with berry compote." },
+              { name: "Cannoli", desc: "Crispy pastry shells filled with sweet ricotta cream and chocolate chips." },
+              { name: "Gelato", desc: "Assorted flavors of authentic Italian ice cream." }
+            ] 
+          },
+          { 
+            category: "Main Course", 
+            items: [
+              { name: "Margherita Pizza", desc: "Classic pizza with tomato sauce, fresh mozzarella, and basil." },
+              { name: "Spaghetti Carbonara", desc: "Spaghetti tossed with pancetta, eggs, Pecorino Romano, and black pepper." },
+              { name: "Chicken Parmesan", desc: "Breaded chicken breast topped with marinara sauce and melted mozzarella." },
+              { name: "Eggplant Lasagna", desc: "Layers of eggplant, cheese, and tomato sauce baked to perfection." }
+            ] 
+          }
+        ]; %>
+        <% menu.forEach(category => { %>
+        <div class="menu-category">
+          <h2><%= category.category %></h2>
+          <ul>
+            <% category.items.forEach(item => { %>
+            <li>
+              <button
+                class="menu-item"
+                onclick="addToCart('<%= item.name %>')"
+              >
+                <span class="menu-label"><%= item.name %></span>
+                <span class="menu-desc"><%= item.desc %></span>
+              </button>
+            </li>
+            <% }); %>
+          </ul>
+        </div>
+        <% }); %>
+      </section>
+    </div>
+  </body>
+</html>

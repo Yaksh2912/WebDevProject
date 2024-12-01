@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Portal</title>
+    <link rel="stylesheet" href="/styles/reservation_portal.css">
+</head>
+<body>
+    <div class="container">
+        <div class="reservation-form">
+            <button class="back-button" onclick="goBack()">&#8592; Back</button>
+            <div class="upper-section">
+                <h1>Reservation Portal</h1>
+            </div>
+            <hr>
+            <div class="lower-section">
+                <div class="input-group date-picker">
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="input-group time-picker">
+                    <label for="time">Select Time:</label>
+                    <input type="time" id="time">
+                </div>
+            </div>
+            <button type="button" onclick="submitReservation()">Reserve</button>
+            <div id="message"></div>
+        </div>
+    </div>
+    <script src="reservation_portal.js"></script>
+</body>
+</html>

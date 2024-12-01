@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #E9D5C0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation-form {
+    background-color: white;
+    padding: 30px; /* Increased padding for a larger feel */
+    border: 5px solid #C07F56; /* Border color */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 700px; /* Increased width */
+    height: 500px; /* Increased height */
+    text-align: center; /* Center align text */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between sections */
+}
+
+.back-button {
+    background-color: transparent; /* Make the background transparent */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size for the arrow */
+    color: #C07F56; /* Color for the back button */
+    margin-bottom: 10px; /* Space below the back button */
+    align-self: flex-start; /* Align the back button to the left */
+}
+
+.upper-section {
+    background-color: #F8E0D7; /* Optional: background color for the title section */
+    padding: 15px; /* Increased padding for the title section */
+    border-radius: 5px;
+    margin-bottom: 10px; /* Space below title */
+}
+
+hr {
+    border: 1px solid #C07F56; /* Line separating sections */
+    margin: 0; /* Remove default margins */
+}
+
+.lower-section {
+    display: flex;
+    flex-direction: column; /* Ensure inputs are stacked vertically */
+    align-items: center; /* Center align input groups */
+    gap: 20px; /* Increased space between input groups */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align labels and inputs */
+    width: 100%; /* Fill the width of the form */
+}
+
+label {
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+input {
+    width: 80%; /* Adjust width for better centering */
+    padding: 10px;
+}
+
+button {
+    background-color: #23221E;
+    color: white;
+    padding: 12px 20px; /* Increased padding for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Increased space above button */
+}
+
+button:hover {
+    background-color: #44403C;
+}
+
+#message {
+    margin-top: 15px; /* Space above message */
+    color: #23221E; /* Message color */
+}
